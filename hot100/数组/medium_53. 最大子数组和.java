@@ -18,8 +18,19 @@ class Solution {
 
 // ==========================================
 // 方法二： Kadane 算法动态规划
-
-
+// Sum = Math.max(Sum, 0) + x; -> 如果Sum记录的曾经的求和都 < 0了，那他一定是累赘，应该重新开始计数了
+// 还可以直接化简为Sum = Math.max(Sum + x, x); 
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int Sum = 0;
+        int ans = nums[0];
+        for(int i : nums) {
+            Sum = Math.max(Sum, 0) + x;
+            ans = Math.max(ans, Sum);
+        }
+        return ans;
+    }
+}
 
 
 
